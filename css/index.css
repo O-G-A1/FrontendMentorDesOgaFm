@@ -1,0 +1,262 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap");
+@import url(https://cdn.jsdelivr.net/npm/water.css@2/out/light.css);
+
+:root {
+  --wh: hsl(0, 0%, 98%);
+  --mg: hsl(0, 0%, 41%);
+  --ab: hsl(0, 0%, 8%);
+  --fs: 18px;
+  --fwm: 500;
+  --fwb: 700;
+}
+
+body {
+  margin: 10px 0;
+  height: 100%;
+  max-width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Epilogue";
+}
+
+nav {
+  margin: 0 auto;
+  max-width: 100% !important;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 30px;
+  padding: 0px 20px;
+  align-items: center;
+}
+
+nav a[href*="log"] {
+  margin-left: auto;
+}
+nav > a[href*="reg"] {
+  border: 1px solid var(--mg);
+  border-radius: 8px;
+  padding: 5px 5px;
+
+  /* translate: 0 -15%; */
+}
+
+nav > a {
+  color: var(--mg);
+  font-weight: var(--fwm);
+  font-size: 12px;
+}
+nav > a:hover {
+  text-decoration: none;
+}
+
+a span {
+  translate: 40% 10%;
+}
+
+a.dropdown {
+  position: relative;
+}
+
+a ul.firstdp {
+  left: -100%;
+  top: 30px;
+}
+a ul.seconddp {
+  left: -20%;
+}
+a ul {
+  list-style: none;
+  position: absolute;
+  top: 30px;
+  background-color: white;
+  box-shadow: 2px 2px 80px 5px rgb(224, 224, 224);
+  width: 100px;
+  padding: 10px 10px;
+  border-radius: 10px;
+}
+a ul li {
+  margin: 10px 0px;
+  font-size: 10px;
+}
+ul.firstdp li.first:first-of-type::before {
+  content: url(../images/icon-todo.svg);
+  margin-right: 10px;
+}
+ul.firstdp li:nth-of-type(2)::before {
+  content: url(../images/icon-calendar.svg);
+  margin-right: 10px;
+}
+ul.firstdp li:nth-of-type(3)::before {
+  content: url(../images/icon-reminders.svg);
+  margin-right: 10px;
+}
+ul.firstdp li:nth-of-type(4)::before {
+    content: url(../images/icon-planning.svg);
+    margin-right: 10px;
+}
+a:hover{
+    color: var(--ab);
+}
+
+a ul{
+    display: none;
+}
+
+
+section.landing{
+    display: flex;
+    width: 80%;
+    margin: 10px auto;
+}
+
+section.landing > aside{
+    flex-basis: 50%;
+}
+aside.hero-content{
+    padding: 50px 10px;
+    display: flex;
+    align-items: flex-start;
+    flex-flow: column nowrap;
+    gap:40px;
+    justify-content: space-around;
+    position: relative;
+}
+
+@media all and (max-width:987px){
+    aside.hero-content{
+        gap: 20px;
+    }
+}
+
+aside.hero-content *{
+    flex: 1;
+}
+aside.hero-content > h1{
+    font-size: 3rem;
+    font-family: 'Epilogue';
+    font-weight: var(--fwb);
+    color: var(--ab);
+    
+}
+aside.hero-content > p{
+    font-size: var(--fs);
+    color: var(--mg);
+}
+
+aside.hero-content > button{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: var(--fwm);
+}
+aside.hero-content > button:hover{
+    background-color: transparent;
+    color: var(--ab);
+    border: 2px solid var(--ab);
+    padding: 8px;
+}
+
+/* aside.hero-content > .partners{
+    position: absolute;
+    bottom: 0;
+} */
+aside.hero-content > .partners{
+    display: flex;
+    justify-content: space-around;
+}
+aside.hero-content > .partners > img{
+    object-fit: contain;
+}
+aside.hero-image > img{
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    object-position: top ;
+}
+a.fa-bars{
+    display: none;
+}
+aside.hero-image {
+    display: flex;
+    flex-flow: row nowrap;
+}
+h1.mobile{
+  display: none;
+}
+
+@media screen and (max-width:576px) {
+    body{
+        margin: 10px 0px;
+        overflow-x: hidden;
+    }
+    section.landing{
+        margin-top: 30px;
+        flex-flow: column-reverse;
+        width: 100vw;
+        padding: 0;
+        gap: 0;
+    }
+
+    nav > a:nth-of-type(1n + 2){
+        display: none;
+    }
+    nav a.fa-bars{
+        display: block;
+        scale: 2;
+    }
+    nav {
+        max-width: 100%;
+        width: 95%;
+        display: flex;
+        justify-content: space-between;
+        margin: 10px auto;
+        padding: 0px 5px;
+    }
+    section.landing > aside.hero-image{
+        width: 100%;
+        flex: 1 1 100%;
+        height:200px ;
+    }
+    section.landing > aside.hero-image > img{
+        width: 100%;
+        object-fit: cover;
+
+    }
+    aside.hero-content > h1{
+      display: none;
+      font-size: 3rem;
+      font-family: 'Epilogue';
+      font-weight: var(--fwb);
+      color: var(--ab);
+      text-align: center;
+    }
+    aside.hero-content h1:nth-of-type(2){
+    display: block;
+    font-size: 2.2rem;
+    text-align: center;
+    padding: 0px 30px;
+    }
+    aside.hero-content p{
+    text-align: center;
+    font-size: 1.1rem;
+    }
+    aside.hero-content > button{
+      background-color: black;
+      color: white;
+      padding: 10px;
+      font-size: 14px;
+      font-weight: var(--fwm);
+      margin: 0 auto;
+  }
+  div.partners{
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+}
